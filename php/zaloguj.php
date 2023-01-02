@@ -1,6 +1,7 @@
 <?php
     if(isset($_POST['login']) && isset($_POST['haslo'])) {
         $pol = mysqli_connect("localhost","root","","text");
+
         if(!$pol) {
             echo "Brak połączenia z BD";
             exit();
@@ -10,6 +11,7 @@
             FROM logowanie
             WHERE login='$_POST[login]' AND haslo='$szyfr' ";
             $zap = mysqli_query($pol,$sql);
+            
             if(!mysqli_num_rows($zap)) {
                 echo "Nie poprawny login lub hasło";
             } else {
