@@ -17,7 +17,7 @@
                echo "Użytkownik ". $dane['login']. " został wylogowany";
                echo "<br>";
                echo "Przejdź do strony głównej<br>";
-               echo "<a href="../index.php">Strona Główna</a>";
+               echo "<a href=\"../index.php\">Strona Główna</a>";
                session_destroy();
             }
         ?>
