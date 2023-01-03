@@ -27,14 +27,18 @@
     }
 ?>
 
-<form method="POST" action="">
-    Login:
-    <br>
-    <input type="text" id="login" name="login"/>
-    <br>
-    Hasło:
-    <br>
-    <input type="password" id="haslo" name="haslo" />
-    <br><br>
-    <input type="submit" value="Zaloguj" id="zaloguj" name="zaloguj" />
+<form class="form" method="POST">
+    <div class="formularz">
+        <label>Login:</label>
+        <input type="text" id="login" name="login"/>
+    </div>
+
+    <div class="formularz">
+        <label>Hasło:</label>
+        <input type="password" id="haslo" name="haslo" />
+    </div>
+    
+    <div class="formularz">
+        <button type="submit" class="wyslij" id="zaloguj" name="zaloguj">Zaloguj</button>
+    </div>
 </form>
