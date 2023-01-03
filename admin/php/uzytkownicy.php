@@ -1,4 +1,4 @@
-<script> 
+<script>
     function pokaz(a) {
         if(document.getElementById(a).style.visibility=="hidden")
             document.getElementById(a).style.visibility="visible";
@@ -22,12 +22,12 @@
     }
 ?>
 
-<table class="uzytkownicy">
-    <tr>
-        <td>ID</td>
-        <td>Login</td>
-        <td>Grupa</td>
-    </tr>
+<table class="table">
+    <thead>
+        <th>ID</th>
+        <th>Login</th>
+        <th>Grupa</th>
+    </thead>
 
 <?php
     $pol = mysqli_connect("localhost","root","","text");
@@ -61,9 +61,9 @@
                     <?php
                     if($_SESSION['grupa']== "A") {
                     ?>
-                    <div onclick="pokaz('ukryte<?php echo $dane['id']; ?>')">Zmień grupę</div>
+                    <div onMouseOver="this.style.background='#009879'" onMouseOut="this.style.background='#FFFFFF'" onclick="pokaz('ukryte<?php echo $dane['id']; ?>')">Zmień grupę</div>
                     <div id="ukryte<?php echo $dane['id']; ?>" style="visibility:hidden">
-                        <form action="?opcja=<?php echo $_GET['opcja'];?>&idu=<?php echo $dane['id'];?>&grupa=<?php echo $dane['grupa'] ?>" method="POST">
+                        <form class="grupa" action="?opcja=<?php echo $_GET['opcja'];?>&idu=<?php echo $dane['id'];?>&grupa=<?php echo $dane['grupa'] ?>" method="POST">
                             <input type="submit" name="zmien" 
                             <?php
                                 if($dane['grupa']=="A")
