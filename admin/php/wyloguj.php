@@ -14,7 +14,7 @@
                WHERE login='$_SESSION[login]'";
                $zap = mysqli_query($pol,$sql);
                $dane = mysqli_fetch_array($zap);
-               echo "Użytkownik ". $dane['login']. " został wylogowany";
+               echo "Użytkownik "."<b>" .$dane['login']."</b>" ." został wylogowany";
                echo "<br>";
                echo "Przejdź do strony głównej<br>";
                echo "<a href=\"../index.php\">Strona Główna</a>";

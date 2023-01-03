@@ -11,7 +11,7 @@
     <body>
         <div class="content">
             <header>
-                
+                <img src="img/blog.png" alt="Blog" />
             </header>
             <nav>
                 <ol>
@@ -43,8 +43,5 @@
                 ?>
             </main>
         </div>
-        <footer>
-            
-        </footer>
     </body>
 </html>

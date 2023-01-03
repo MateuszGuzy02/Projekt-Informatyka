@@ -1,17 +1,21 @@
-<table>
-    <tr>
-        <td>Imie</td>
-        <td>Nazwisko</td>
-        <td>Login</td>
-        <td>Hasło</td>
-    </tr>
-    <form method="POST" action="?opcja=stronaglowna" id="formularz">
-        <tr>
-            <td><input type="text" name="imie"/></td>
-            <td><input type="text" name="nazwisko"/></td>
-            <td><input type="text" name="login"/></td>
-            <td><input type="password" name="haslo"/></td>
-        </tr>
-</table>
-<input type="submit" name="zaloz" value="Załóż" />
+<form class="form" method="POST" action="?opcja=stronaglowna" id="formularz">
+    <div class="formularz">
+        <label>Imię</label>
+        <input type="text" name="imie"/>
+    </div>
+    <div class="formularz">
+        <label>Nazwisko</label>
+        <input type="text" name="nazwisko"/>
+    </div>
+    <div class="formularz">
+        <label>Login</label>
+        <input type="text" name="login"/>
+    </div>
+    <div class="formularz">
+        <label>Hasło</label>
+        <input type="password" name="haslo"/>
+    </div>
+    <div class="formularz">
+        <input type="submit" class="wyslij" name="zaloz" value="Załóż" />
+    </div>
 </form>
