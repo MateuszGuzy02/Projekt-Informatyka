@@ -45,9 +45,10 @@
 
     if(isset($_POST['zmien_onas'])) {
         $pol = mysqli_connect("localhost","root","","text");
-        $sql = "UPDATE onas SET tytul = '$_POST[tytul]', tresc = '$_POST[tresc]'
-        WHERE id = 1";
+        $sql = "UPDATE onas SET id = '1' ,tytul = '$_POST[tytul]', tresc = '$_POST[tresc]'
+        WHERE 1";
         $zap = mysqli_query($pol,$sql);
+        
     }
 
     if(isset($_POST['zaloz'])) {
@@ -59,14 +60,13 @@
     }
 ?>
 
-<table class="artykuly">
-    <tr>
-        <td>ID</td>
-        <td>Tytuł</td>
-        <td>AKT</td>
-        <td>Opcje</td>
-    </tr>
-
+<table class="table">
+    <thead>
+        <th>ID</th>
+        <th>Tytuł</th>
+        <th>AKT</th>
+        <th>Opcje</th>
+    </thead>
 
 <?php
     $pol = mysqli_connect("localhost","root","","text");
@@ -83,7 +83,7 @@
             <td><?php echo $dane['tytul']; ?></td>
             <td><?php if($dane['akt']==0) { ?>
                    <a href="?opcja=<?php echo $_GET['opcja']; ?>&akt=<?php echo $dane['akt']; ?>&id=<?php echo $dane['id']; ?>"> 
-                   <img src="img/x.png"> </a>
+                   <img src="img/x.png" alt="X"> </a>
 <?php 
             } else {
 ?>
@@ -93,10 +93,10 @@
             } 
 ?>
             </td>
-            <td width="120"> 
+            <td> 
                 <a href="?opcja=modyfikuj&id=<?php echo $dane['id']; ?>"> 
-                    <img src="img/modyfikuj.png" alt="modyfikuj" /> 
-                </a> / 
+                    <img src="img/edytuj.png" alt="edytuj" /> 
+                </a>/ 
                 <a href="?opcja=<?php echo $_GET['opcja'];?>&del=<?php echo $dane['id']; ?>">
                 <img src="img/kosz.png" width="30px" alt="usuń" onclick="potwierdzenie()"/>   </a>
             </td>
