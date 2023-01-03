@@ -48,11 +48,13 @@ nav ol {
 nav ol li a:link {
     text-decoration: none;
     font-weight: bold;
+    color: #ffffff;
 }
 
 nav ol li a:hover {
     text-decoration: underline;
     font-weight: bold;
+    color: #ffffff;
 }
 
 nav ol li a:visited {
