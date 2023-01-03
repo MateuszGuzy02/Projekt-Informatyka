@@ -10,16 +10,21 @@
     }
 ?>
 
-<form method="POST">
-    Imie:
+<form class="form" id="kontakt" method="POST">
+    <div class="formularz">
+        <label>Imię *</label>
+        <input type="text" id="imie" name="imie" />
+    </div>
+    <div class="formularz">
+        <label>Temat *</label>
+        <input type="text" id="temat" name="temat" />
+    </div>
+    <div class="formularz">
+        <label>Wiadomość *</label>
+        <textarea id="wiadomosc" name="wiadomosc"></textarea>
+    </div>
     <br>
-    <input type="text" id="imie" name="imie" /> <br>
-    Temat:
-    <br>
-    <input type="text" id="temat" name="temat" /> <br>
-    Wiadomość:
-    <br>
-    <textarea id="wiadomosc" name="wiadomosc"></textarea>
-    <br>
-    <input type="submit" value="Wyslij" id="wyslij" name="wyslij" />
+    <div class="formularz">
+        <input type="submit" class="wyslij" name="wyslij" value="Wyślij" />
+    </div>
 </form>
