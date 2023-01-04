@@ -10,7 +10,6 @@
     </div>
     
     <div class="formularz">
-        <label>Dodaj</label>
         <input type="submit" class="wyslij" name="dodaj" value="Dodaj" />
     </div>
 </form>

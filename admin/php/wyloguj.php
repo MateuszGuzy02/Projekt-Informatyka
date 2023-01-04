@@ -1,17 +1,15 @@
 <html>
     <head>
-    <title>wyloguj</title>
+    <title>Wyloguj</title>
     </head>
     <body>
         <?php
-            $pol = mysqli_connect("localhost","root","","text");
+            $pol = mysqli_connect("localhost","mateusz","mateusz","text");
             if(!$pol) {
                 echo "Brak połączenia z BD";
                 exit();
             } else {
-               $sql = "SELECT * 
-               FROM logowanie
-               WHERE login='$_SESSION[login]'";
+               $sql = "SELECT * FROM logowanie WHERE login='$_SESSION[login]'";
                $zap = mysqli_query($pol,$sql);
                $dane = mysqli_fetch_array($zap);
                echo "Użytkownik "."<b>" .$dane['login']."</b>" ." został wylogowany";
@@ -23,4 +21,3 @@
         ?>
     </body>
 </html>
-﻿

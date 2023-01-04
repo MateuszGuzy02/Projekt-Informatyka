@@ -1,5 +1,5 @@
 <?php
-    $pol = mysqli_connect("localhost","root","","text");
+    $pol = mysqli_connect("localhost","mateusz","mateusz","text");
     if(!$pol) {
     echo "Brak połączenia z BD";
     exit();
@@ -12,14 +12,19 @@
     }
 ?>
 
-<form action="?opcja=stronaglowna" method="post">
+<form class="form" action="?opcja=stronaglowna" method="post">
     Zmień tytuł artykuł: <br>
     <input type="text" name="tytul" size="80" value="<?php echo $dane['tytul']; ?>" />
+    
     <br>Zmień treść artykułu: <br>
     <textarea name="tresc" cols="60" rows="10">
         <?php echo $dane['tresc']; ?>
     </textarea>
     <br>
+
     <input type="hidden" name="id" value="<?php echo $dane['id']; ?>" />
-    <input type="submit" name="zmien" value="Zmień" />
+
+    <div class="formularz">
+        <input type="submit" class="wyslij" name="zmien" value="Zmień" />
+    </div>
 </form>

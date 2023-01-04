@@ -7,7 +7,6 @@ body {
 .content {
     margin: auto;
     width: 900px;
-    
     padding: 10px;
     background-color: #fff;
     border-radius: 20px 20px 20px 20px;
@@ -45,19 +44,19 @@ nav ol {
     margin: auto;
 }
 
-nav ol li a:link {
+nav ol li a:link, .rejestracja:link {
     text-decoration: none;
     font-weight: bold;
     color: #ffffff;
 }
 
-nav ol li a:hover {
+nav ol li a:hover, .rejestracja:hover {
     text-decoration: underline;
     font-weight: bold;
     color: #ffffff;
 }
 
-nav ol li a:visited {
+nav ol li a:visited, .rejestracja:visited {
     text-decoration: underline;
     font-weight: bold;
     color: #ffffff;
@@ -106,7 +105,6 @@ article {
 }
 
 table.table {
-    
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
@@ -115,7 +113,6 @@ table.table {
 
 table.table td {
     width: 120px;
-    
 }
 
 table.table th {
@@ -130,7 +127,6 @@ table.table th {
     text-align: center;
     min-width: 400px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    
 }
 
 table.table img {
@@ -144,7 +140,7 @@ table.table img {
     border-radius: 10px 10px 0px 0px;
 }
 
-nav li ol{
+nav li ol {
     position:absolute;
     visibility: hidden;
 	margin: auto;
@@ -169,6 +165,7 @@ nav li:hover li{
 .form .formularz {
     margin-bottom:1rem;
 }
+
 .form .formularz:last-child {
     margin-bottom: 0;
 }
@@ -204,7 +201,7 @@ nav li:hover li{
     margin-bottom:0.5rem;
 }
 
-.form .wyslij {
+.form .wyslij, button {
     font-family: sans-serif;
     padding:1rem 2rem;
     background: #009879;

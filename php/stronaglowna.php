@@ -1,12 +1,20 @@
 <?php
     if(isset($_POST['dodaj'])) {
-        $pol = mysqli_connect("localhost","root","","text");
+        $pol = mysqli_connect("localhost","mateusz","mateusz","text");
         $sql = "INSERT INTO artykuly (`tytul`, `tresc`, `data_utworzenia`, `id_autora`)
         VALUES ('$_POST[tytul]', '$_POST[tresc]', 'CURRENT_TIMESTAMP', '$_SESSION[id]')";
         $zap = mysqli_query($pol,$sql);
     }
 
-    $pol = mysqli_connect("localhost","root","","text");
+    if(isset($_POST['zaloz'])) {
+        $szyfr = sha1($_POST['haslo']);
+        $pol = mysqli_connect("localhost","mateusz","mateusz","text");
+        $sql = "INSERT INTO logowanie (`imie`, `nazwisko`, `login`, `haslo`, `grupa`)
+        VALUES ('$_POST[imie]', '$_POST[nazwisko]', '$_POST[login]', '$szyfr', 'U')";
+        $zap = mysqli_query($pol,$sql);
+    }
+
+    $pol = mysqli_connect("localhost","mateusz","mateusz","text");
     if(!$pol) {
         echo "Brak połączenia z bazą danych";
     } else {
@@ -19,12 +27,11 @@
                 <article>
                     <div class="tytula"><?php echo $dane["tytul"]; ?></div>
                     <div class="tresca"><?php echo $dane["tresc"]; ?></div>
+                    <div class="data"><?php echo $dane["data_utworzenia"]; ?></div>
                 </article>
-<?php
+                <?php
             }
         }
     }
-
-
     mysqli_close($pol);
 ?>

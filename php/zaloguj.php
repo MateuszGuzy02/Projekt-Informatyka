@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST['login']) && isset($_POST['haslo'])) {
-        $pol = mysqli_connect("localhost","root","","text");
+        $pol = mysqli_connect("localhost","mateusz","mateusz","text");
 
         if(!$pol) {
             echo "Brak połączenia z BD";
@@ -39,6 +39,7 @@
     </div>
     
     <div class="formularz">
-        <button type="submit" class="wyslij" id="zaloguj" name="zaloguj">Zaloguj</button>
+        <input type="submit" class="wyslij" name="zaloguj" value="Zaloguj" />
+        <button><a href="?opcja=rejestracja" class="rejestracja">Załóż konto</a></button>
     </div>
 </form>
