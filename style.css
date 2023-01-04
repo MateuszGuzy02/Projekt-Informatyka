@@ -224,3 +224,19 @@ form input[type=submit]:hover {
     border-radius: 15px 15px 15px 15px;
     height: 30px;
 }
+
+.wyloguj {
+    background-color: #009879;
+    color: #ffffff;
+    width: 400px;
+    height: 70px;
+    padding-top: 15px;
+    margin-top: 35px;
+    margin-left: 250px;
+    border-radius: 15px 15px 15px 15px;
+    text-align: center;
+}
+
+.wyloguj a:visited {
+    color: #ffffff;
+}
