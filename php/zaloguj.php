@@ -7,9 +7,7 @@
             exit();
         } else {
             $szyfr = sha1($_POST['haslo']);
-            $sql = "SELECT * 
-            FROM logowanie
-            WHERE login='$_POST[login]' AND haslo='$szyfr' ";
+            $sql = "SELECT * FROM logowanie WHERE login='$_POST[login]' AND haslo='$szyfr' ";
             $zap = mysqli_query($pol,$sql);
             
             if(!mysqli_num_rows($zap)) {
