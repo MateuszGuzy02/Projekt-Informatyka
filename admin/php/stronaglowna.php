@@ -1,15 +1,13 @@
 <?php
     if(isset($_GET['akt']) && $_GET['akt'] == 1) {
         $pol = mysqli_connect("localhost","mateusz","mateusz","text");
-        $sql = "UPDATE `artykuly` SET `akt`='0'
-        WHERE id='$_GET[id]'";
+        $sql = "UPDATE `artykuly` SET `akt`='0' WHERE id='$_GET[id]'";
         $zap = mysqli_query($pol,$sql);
     }
 
     if(isset($_GET['akt']) && $_GET['akt'] == 0) {
         $pol = mysqli_connect("localhost","mateusz","mateusz","text");
-        $sql = "UPDATE `artykuly` SET `akt`='1'
-        WHERE id='$_GET[id]'";
+        $sql = "UPDATE `artykuly` SET `akt`='1' WHERE id='$_GET[id]'";
         $zap = mysqli_query($pol,$sql);
     }
 
@@ -46,8 +44,7 @@
 
     if(isset($_POST['zmien_onas'])) {
         $pol = mysqli_connect("localhost","mateusz","mateusz","text");
-        $sql = "UPDATE onas SET id = '1' ,tytul = '$_POST[tytul]', tresc = '$_POST[tresc]'
-        WHERE 1";
+        $sql = "UPDATE onas SET id = '1' ,tytul = '$_POST[tytul]', tresc = '$_POST[tresc]' WHERE 1";
         $zap = mysqli_query($pol,$sql);
         
     }
@@ -96,7 +93,8 @@
                     <img src="img/edytuj.png" alt="edytuj" /> 
                 </a>/ 
                 <a href="?opcja=<?php echo $_GET['opcja'];?>&del=<?php echo $dane['id']; ?>">
-                <img src="img/kosz.png" width="30px" alt="usuń" onclick="potwierdzenie()"/>   </a>
+                <img src="img/kosz.png" width="30px" alt="usuń" onclick="potwierdzenie()"/>
+                </a>
             </td>
         </tr>
         <?php

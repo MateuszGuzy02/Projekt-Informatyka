@@ -10,6 +10,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../style.css" type="text/css">
+        <link rel="icon" href="../img/icon.png" type="image/png" alt="https://www.flaticon.com/free-icons/blog">
         <title>Blog</title>
     </head>
     <body>
@@ -21,12 +22,10 @@
                 if(isset($_SESSION['login'])) {
                     $pol = mysqli_connect("localhost","mateusz","mateusz","text");
                     if(!$pol) {
-                    echo "Brak połączenia z BD";
-                    exit();
+                        echo "Brak połączenia z BD";
+                        exit();
                     } else {
-                        $sql = "SELECT * 
-                        FROM logowanie
-                        WHERE login='$_SESSION[login]'";
+                        $sql = "SELECT * FROM logowanie WHERE login='$_SESSION[login]'";
                         $zap = mysqli_query($pol,$sql);
                         $dane = mysqli_fetch_array($zap);
                     }
@@ -35,7 +34,7 @@
             <nav>
                 <ol>
                     <li><a href="?opcja=stronaglowna">Strona Główna</a>
-                    <?php if($_SESSION['grupa']== "A") { ?>
+                    <?php if($_SESSION['grupa']== "A" || $_SESSION['grupa']== "U") { ?>
                             <ol>
                                 <li><a href="?opcja=dodajartykul">Dodaj artykuł</a></li>
                             </ol>
@@ -107,25 +106,26 @@
         </div>
         <footer>
             <?php
-                    if(isset($_SESSION['login'])) {
-                        echo "<div class = 'footer'>";
-                        $pol = mysqli_connect("localhost","mateusz","mateusz","text");
-                        if(!$pol) {
+                if(isset($_SESSION['login'])) {
+                    echo "<div class = 'footer'>";
+                    $pol = mysqli_connect("localhost","mateusz","mateusz","text");
+                    if(!$pol) {
                         echo "Brak połączenia z BD";
                         exit();
+                    } else {
+                        $sql = "SELECT * FROM logowanie WHERE login='$_SESSION[login]'";
+                        $zap = mysqli_query($pol,$sql);
+                        $dane = mysqli_fetch_array($zap);
+                        echo "Witaj ". "<b>".$dane['imie']." ". $dane['nazwisko']."</b>"." [";
+                        if($dane['grupa']=="A") {
+                            echo "Administrator";
                         } else {
-                            $sql = "SELECT * FROM logowanie WHERE login='$_SESSION[login]'";
-                            $zap = mysqli_query($pol,$sql);
-                            $dane = mysqli_fetch_array($zap);
-                            echo "Witaj ". "<b>".$dane['imie']." ". $dane['nazwisko']."</b>"." [";
-                                if($dane['grupa']=="A")
-                                    echo "Administrator";
-                                else
-                                    echo "Użytkownik";
-                            echo "]";
-                        }
-                        echo "</div>";
+                            echo "Użytkownik";
+                        }      
+                        echo "]";
                     }
+                    echo "</div>";
+                }
                 ?>
         </footer>
     </body>

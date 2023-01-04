@@ -6,6 +6,7 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css" type="text/css">
+        <link rel="icon" href="img/icon.png" type="image/png" alt="https://www.flaticon.com/free-icons/blog">
         <title>Blog</title>
     </head>
     <body>
