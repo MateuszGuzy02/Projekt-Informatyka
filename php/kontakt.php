@@ -4,7 +4,8 @@
         if(!$pol) {
             echo "Brak połączenia z BD";
         } else {
-            $sql = "INSERT INTO `kontakt`(`imie`, `temat`, `wiadomosc`) VALUES ('$_POST[imie]','$_POST[temat]','$_POST[wiadomosc]')";
+            $sql = "INSERT INTO `kontakt`(`imie`, `temat`, `wiadomosc`, `data_wyslania`) 
+            VALUES ('$_POST[imie]','$_POST[temat]','$_POST[wiadomosc]', CURRENT_TIMESTAMP)";
             $zap = mysqli_query($pol,$sql);
         }
     }

@@ -36,7 +36,9 @@
                         if($_GET['opcja']=="zaloguj") {
                             include("php/zaloguj.php");
                         }
-
+                        if($_GET['opcja']=="rejestracja") {
+                            include("php/rejestracja.php");
+                        }
                     } else {
                         include("php/stronaglowna.php");
                     }

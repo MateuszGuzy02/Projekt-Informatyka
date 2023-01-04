@@ -1,6 +1,6 @@
 <?php
     if(isset($_POST['zaloguj'])) {
-        $pol = mysqli_connect("localhost","root","","text");
+        $pol = mysqli_connect("localhost","mateusz","mateusz","text");
         if(!$pol) {
             echo "Brak połączenia z BD";
         } else {

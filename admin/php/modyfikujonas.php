@@ -1,15 +1,14 @@
 <?php
-    $pol = mysqli_connect("localhost","root","","text");
-    if(!$pol) {
+  $pol = mysqli_connect("localhost","mateusz","mateusz","text");
+  if(!$pol) {
     echo "Brak połączenia z BD";
     exit();
-    } else {
-        $sql = "SELECT * 
-        FROM onas
-        WHERE id=1";
-        $zap = mysqli_query($pol,$sql);
-        $dane = mysqli_fetch_array($zap);
-    }
+  } 
+  else {
+    $sql = "SELECT * FROM onas WHERE id=1";
+    $zap = mysqli_query($pol,$sql);
+    $dane = mysqli_fetch_array($zap);
+  }
 ?>
 
 <form class="form" action="?opcja=stronaglowna" method="post">
