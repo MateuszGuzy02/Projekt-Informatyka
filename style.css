@@ -240,3 +240,10 @@ form input[type=submit]:hover {
 .wyloguj a:visited {
     color: #ffffff;
 }
+
+.error {
+    color: red;
+    
+    margin-top: 35px;
+    margin-left: 350px;
+}

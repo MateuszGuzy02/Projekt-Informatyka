@@ -11,7 +11,7 @@
             $zap = mysqli_query($pol,$sql);
             
             if(!mysqli_num_rows($zap)) {
-                echo "Nie poprawny login lub hasło";
+                echo "<div class='error'>Nie poprawny login lub hasło! </div>";
             } else {
                 $dane = mysqli_fetch_array($zap);
                 //echo "Witaj ".$dane['login'];
