@@ -12,7 +12,9 @@
     <body>
         <div class="content">
             <header>
-                <img src="img/blog.png" alt="Blog" />
+            <a href="?opcja=stronaglowna">
+                <img src="img/blog.png" alt="Blog" /> 
+            </a>
             </header>
             <nav>
                 <ol>
