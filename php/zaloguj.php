@@ -14,7 +14,6 @@
                 echo "<div class='error'>Nie poprawny login lub hasło! </div>";
             } else {
                 $dane = mysqli_fetch_array($zap);
-                //echo "Witaj ".$dane['login'];
                 $_SESSION['login'] = $dane['login'];
                 $_SESSION['id'] = $dane['id'];
                 $_SESSION['grupa'] = $dane['grupa'];
